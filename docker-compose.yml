@@ -1,0 +1,37 @@
+version: "3.3"
+services:
+    tas:
+        build: ./tas
+        ports:
+            - "127.0.0.1:9503:9503"
+        volumes:
+            - "sessions:/app/sessions"
+        restart: unless-stopped
+        depends_on:
+            - mysql
+        working_dir: "/app"
+        environment:
+            WAIT_HOSTS: mysql:3306
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "1024k"
+                max-file: "2"
+
+    mysql:
+        image: mariadb:latest
+        ports:
+            - "127.0.0.1:3307:3306"
+        restart: unless-stopped
+        volumes:
+            - "mysql_data:/var/lib/mysql"
+        environment:
+            MYSQL_ROOT_PASSWORD: '52ymhzRQ'
+
+networks:
+    'telegram-api-server':
+        driver: local
+
+volumes:
+    mysql_data: {}
+    sessions: {}

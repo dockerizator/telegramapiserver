@@ -1,0 +1,38 @@
+{
+  "name": "xtrime-ru/telegramapiserver",
+  "description": "Fast, simple, async php telegram client and parser: MadelineProto + Amp HTTP Server",
+  "type": "project",
+  "homepage": "https://tg.i-c-a.su/",
+  "license": "MIT",
+  "keywords": ["telegram", "mtproto", "protocol", "client", "PHP", "amphp", "async", "daemon", "coroutine", "parser", "micro-service"],
+  "require": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "ext-pcntl": "*",
+    "amphp/http-server": "^2",
+    "amphp/http-server-router": "^1",
+    "amphp/websocket-server": "dev-master",
+    "amphp/websocket-client": "^1",
+    "amphp/http-client": "^4",
+    "vlucas/phpdotenv": "^4",
+    "danog/madelineproto":"dev-master",
+    "amphp/http-server-form-parser": "^1.1"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Alexander Pankratov",
+      "email": "alexander@i-c-a.su"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "TelegramApiServer\\": "src/"
+    }
+  }
+}
