@@ -31,8 +31,8 @@ RUN cp -a docker/php/conf.d/. "$PHP_INI_DIR/conf.d/" \
 VOLUME ["/app/sessions"]
 
 #Creating symlink to save .env in volume
-RUN touch '/app/sessions/.env.docker' && \
-    ln -s '/app/sessions/.env.docker' '/app/.env.docker'
+#RUN touch '/app/sessions/.env.docker' && \
+#    ln -s '/app/sessions/.env.docker' '/app/.env.docker'
 
 EXPOSE 9503
 
